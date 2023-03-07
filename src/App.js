@@ -2,7 +2,6 @@ import React from "react";
 import GlobalStyle from "./styles/globalStyle";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Context } from "./contexts/Context";
-import Trending from "./components/Trending";
 import HomePage from './pages/HomePage/HomePage';
 import SignUp from './pages/SignUpPage/SignUp';
 import Timeline from './pages/TimelinePage/Timeline';
@@ -16,7 +15,6 @@ export default function App() {
       <GlobalStyle />
       <Context.Provider value={{}}>
         <Routes>
-        <Route path="/" element={<Trending />} />
           <Route path='/' element={<HomePage />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/timeline' element={<Timeline />} />
