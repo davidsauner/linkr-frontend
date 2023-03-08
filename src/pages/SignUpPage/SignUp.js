@@ -1,6 +1,10 @@
 import { Left, All, Right, StyledForm, StyledInput, StyledButton, StyledLink } from './style'
+import React, {useContext } from 'react';
+import Context from '../../contexts/Context';
 
 export default function SignUp() {
+    const { email, setEmail,username, setUserName, password, setPassword, pictureUrl, setpictureUrl} = useContext(Context)
+
     return (
         <All>
             <Left>
