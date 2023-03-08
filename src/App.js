@@ -8,6 +8,7 @@ import Timeline from './pages/TimelinePage/Timeline';
 import Hashtag from './pages/HashtagPage/Hashtag';
 import User from './pages/UserPage/User'
 
+
 export default function App() {
 
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path='/timeline' element={<Timeline />} />
           <Route path='/hashtag/:hashtag' element={<Hashtag />} />
           <Route path='/user/:id' element={<User />} />
+          
         </Routes>
       </Context.Provider>
     </BrowserRouter>

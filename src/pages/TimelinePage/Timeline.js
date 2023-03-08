@@ -1,7 +1,18 @@
 import { } from './style'
-
+import Delete from './Delete/Delete'
+import { useState } from 'react'
 export default function Timeline() {
+    const [showdelete , setShowDelete] = useState(false)
+
+
     return (
-        <div>Timeline</div>
+        <div>
+            
+            <button onClick={()=>setShowDelete(!showdelete)} >
+                lixeirinha linda
+            </button>
+            {showdelete && <Delete setShowDelete={setShowDelete}/>}
+            
+            </div>
     )
 }
