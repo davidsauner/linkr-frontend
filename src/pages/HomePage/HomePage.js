@@ -1,6 +1,22 @@
 import {Left, All, Right, StyledForm, StyledInput, StyledButton, StyledLink } from './style'
+import React, { useContext } from 'react';
+import Context from '../../contexts/Context';
+import { useState } from "react"
 
 export default function HomePage() {
+    const { email, setEmail,  password, setPassword} = useContext(Context)
+    const [disabled, setDisabled] = useState(false)
+  
+
+    function entrar(e) {
+        if (!email || !password) {
+            alert('Todos os campos são obrigatórios!')
+            setDisabled(false)
+          }
+        e.preventDefault()
+        setDisabled(true)
+
+    }
     return (
         <All>
             <Left>
@@ -24,7 +40,9 @@ export default function HomePage() {
                         required
                     />
                     
-                    <StyledButton>
+                    <StyledButton
+                    onClick={entrar}
+                    disabled={disabled}>
                         Log In
                     </StyledButton>
 

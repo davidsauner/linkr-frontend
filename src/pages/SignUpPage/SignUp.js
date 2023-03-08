@@ -1,10 +1,22 @@
 import { Left, All, Right, StyledForm, StyledInput, StyledButton, StyledLink } from './style'
-import React, {useContext } from 'react';
+import React, { useContext } from 'react';
 import Context from '../../contexts/Context';
+import { useState } from "react"
 
 export default function SignUp() {
-    const { email, setEmail,username, setUserName, password, setPassword, pictureUrl, setpictureUrl} = useContext(Context)
+    const { email, setEmail, username, setUserName, password, setPassword, pictureUrl, setpictureUrl } = useContext(Context)
+    const [disabled, setDisabled] = useState(false)
+  
 
+    function cadastrar(e) {
+        if (!email || !username || !password || pictureUrl) {
+            alert('Todos os campos são obrigatórios!')
+            setDisabled(false)
+          }
+        e.preventDefault()
+        setDisabled(true)
+
+    }
     return (
         <All>
             <Left>
@@ -40,7 +52,10 @@ export default function SignUp() {
                         type="url"
                         required
                     />
-                    <StyledButton>
+                    <StyledButton 
+                    onClick={cadastrar}
+                    disabled={disabled}
+                    >
                         Sign Up
                     </StyledButton>
 
