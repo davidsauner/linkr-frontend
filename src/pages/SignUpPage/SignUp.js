@@ -28,18 +28,21 @@ export default function SignUp() {
                 <StyledForm>
 
                     <StyledInput
+                        data-test="email"
                         name="e-mail"
                         placeholder="e-mail"
                         type="email"
                         required
                     />
                     <StyledInput
+                        data-test="password"
                         name="password"
                         placeholder="password"
                         type="password"
                         required
                     />
                     <StyledInput
+                        data-test="username"
                         name="username"
                         placeholder="username"
                         type="text"
@@ -47,12 +50,14 @@ export default function SignUp() {
                     />
 
                     <StyledInput
+                        data-test="picture-url"
                         name="pictureUrl"
                         placeholder="picture url"
                         type="url"
                         required
                     />
                     <StyledButton 
+                    data-test="sign-up-btn"
                     onClick={cadastrar}
                     disabled={disabled}
                     >
@@ -61,7 +66,10 @@ export default function SignUp() {
 
                 </StyledForm>
 
-                <StyledLink to="/">
+                <StyledLink 
+                to="/"
+                data-test="login-link"
+                >
                     Switch back to log in
                 </StyledLink>
             </Right>
