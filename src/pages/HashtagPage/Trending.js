@@ -1,5 +1,5 @@
 import { StyledAside } from "./style";
-import React, { useContext } from "react";
+import React from "react";
 import axios from "axios";
 import LiHashtags from "./LiHashtags";
 
@@ -10,9 +10,7 @@ export default function Trending() {
   React.useEffect(() => {
     const request = axios.get(`${REACT_APP_API_URL}/trending`);
     request.then((response) => {
-      let tags = [];
-      response.data.forEach(element => tags.push(Object.values(element)));
-      setTrends(tags);
+      setTrends(response.data);
     });
     request.catch((error) => {
       alert(error.response.data.message);
@@ -24,7 +22,7 @@ export default function Trending() {
       <h2>trending</h2>
       <ul>
         {trends.map((tag) => (
-          <LiHashtags key={tag} tag={tag} />
+          <LiHashtags key={tag.id} id={tag.id} tag={tag.tag} />
         ))}
       </ul>
     </StyledAside>
