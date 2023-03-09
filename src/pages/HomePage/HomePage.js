@@ -28,12 +28,14 @@ export default function HomePage() {
                 <StyledForm>
 
                     <StyledInput
+                        data-test="email"
                         name="e-mail"
                         placeholder="e-mail"
                         type="email"
                         required
                     />
                     <StyledInput
+                        data-test="password"
                         name="password"
                         placeholder="password"
                         type="password"
@@ -41,6 +43,7 @@ export default function HomePage() {
                     />
                     
                     <StyledButton
+                    data-test="login-btn"
                     onClick={entrar}
                     disabled={disabled}>
                         Log In
@@ -48,7 +51,10 @@ export default function HomePage() {
 
                 </StyledForm>
 
-                <StyledLink to="/signup">
+                <StyledLink 
+                to="/signup"
+                data-test="sign-up-link"
+                >
                 First time? Create an account!
                 </StyledLink>
             </Right>
