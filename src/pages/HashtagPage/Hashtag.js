@@ -1,29 +1,6 @@
-import { StyledAside } from "./style";
-import React, { useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import LiHashtags from "./LiHashtags";
+import Trending from "./Trending.js";
 
-export default function Hashtag() {
-  const tags = [
-    "javascript",
-    "react",
-    "css",
-    "node",
-    "sql",
-    "mongodb",
-    "drive",
-    "hub",
-    "ps4",
-    "teste",
-  ];
-  return (
-    <StyledAside>
-      <h2>trending</h2>
-      <ul>
-        {tags.map((tag) => (
-          <LiHashtags key={tag} tag={tag} />
-        ))}
-      </ul>
-    </StyledAside>
-  );
-}
+export default function Hashtag() {}
