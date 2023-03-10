@@ -84,5 +84,4 @@ export default function HomePage() {
                 </StyledLink>
             </Right>
         </All>
-    )
-}
+    )}
