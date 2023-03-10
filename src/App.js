@@ -14,13 +14,13 @@ export default function App() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")  
   const [username, setUserName] = useState("")
-  const [pictureUrl, setpictureUrl] = useState("")
+  const [pictureurl, setpictureurl] = useState("")
   const [token, setToken] = useState("")
 
   return (
     <BrowserRouter>
       <GlobalStyle />
-      <Context.Provider value={{email, setEmail,password, setPassword, username, setUserName,pictureUrl, setpictureUrl,token, setToken }}>
+      <Context.Provider value={{email, setEmail,password, setPassword, username, setUserName,pictureurl, setpictureurl,token, setToken }}>
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/signup' element={<SignUp />} />

@@ -32,6 +32,8 @@ export default function HomePage() {
                         name="e-mail"
                         placeholder="e-mail"
                         type="email"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
                         required
                     />
                     <StyledInput
@@ -39,6 +41,8 @@ export default function HomePage() {
                         name="password"
                         placeholder="password"
                         type="password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
                         required
                     />
                     

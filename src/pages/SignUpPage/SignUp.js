@@ -4,15 +4,15 @@ import Context from '../../contexts/Context';
 import { useState } from "react"
 
 export default function SignUp() {
-    const { email, setEmail, username, setUserName, password, setPassword, pictureUrl, setpictureUrl } = useContext(Context)
+    const { email, setEmail, username, setUserName, password, setPassword, pictureurl, setpictureurl } = useContext(Context)
     const [disabled, setDisabled] = useState(false)
-  
+
 
     function cadastrar(e) {
-        if (!email || !username || !password || pictureUrl) {
+        if (!email || !username || !password || pictureurl) {
             alert('Todos os campos são obrigatórios!')
             setDisabled(false)
-          }
+        }
         e.preventDefault()
         setDisabled(true)
 
@@ -29,9 +29,11 @@ export default function SignUp() {
 
                     <StyledInput
                         data-test="email"
-                        name="e-mail"
+                        name="email"
                         placeholder="e-mail"
                         type="email"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
                         required
                     />
                     <StyledInput
@@ -39,6 +41,8 @@ export default function SignUp() {
                         name="password"
                         placeholder="password"
                         type="password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
                         required
                     />
                     <StyledInput
@@ -46,6 +50,8 @@ export default function SignUp() {
                         name="username"
                         placeholder="username"
                         type="text"
+                        value={username}
+                        onChange={e => setUserName(e.target.value)}
                         required
                     />
 
@@ -54,21 +60,23 @@ export default function SignUp() {
                         name="pictureUrl"
                         placeholder="picture url"
                         type="url"
+                        value={pictureurl}
+                        onChange={e => setpictureurl(e.target.value)}
                         required
                     />
-                    <StyledButton 
-                    data-test="sign-up-btn"
-                    onClick={cadastrar}
-                    disabled={disabled}
+                    <StyledButton
+                        data-test="sign-up-btn"
+                        onClick={cadastrar}
+                        disabled={disabled}
                     >
                         Sign Up
                     </StyledButton>
 
                 </StyledForm>
 
-                <StyledLink 
-                to="/"
-                data-test="login-link"
+                <StyledLink
+                    to="/"
+                    data-test="login-link"
                 >
                     Switch back to log in
                 </StyledLink>
