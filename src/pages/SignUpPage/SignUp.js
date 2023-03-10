@@ -2,19 +2,41 @@ import { Left, All, Right, StyledForm, StyledInput, StyledButton, StyledLink } f
 import React, { useContext } from 'react';
 import Context from '../../contexts/Context';
 import { useState } from "react"
+import axios from 'axios'
+import {useNavigate } from "react-router-dom";
 
 export default function SignUp() {
     const { email, setEmail, username, setUserName, password, setPassword, pictureurl, setpictureurl } = useContext(Context)
     const [disabled, setDisabled] = useState(false)
-
+    const navigate = useNavigate();
 
     function cadastrar(e) {
+        e.preventDefault()
         if (!email || !username || !password || pictureurl) {
             alert('Todos os campos são obrigatórios!')
             setDisabled(false)
         }
-        e.preventDefault()
-        setDisabled(true)
+
+        const URL = `${process.env.REACT_APP_API_URL}/signup`
+
+        const dadosCadastro = {email, username, password, pictureurl }
+
+        const promessa = axios.post(URL, dadosCadastro)
+
+        promessa.then(res => {
+            navigate('/')
+            setDisabled(false)
+        })
+
+        promessa.catch(res => {
+            setDisabled(false)
+            alert('Confira novamente todos os campos preenchidos!')
+            setEmail("")
+            setUserName("")
+            setPassword("")
+            setpictureurl("")
+
+        })
 
     }
     return (
