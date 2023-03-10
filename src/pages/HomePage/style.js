@@ -1,172 +1,90 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom"
+
+export const All = styled.div`
+ width: 100%;
+  height: 100vh;
+  display: flex;
+
+`
 
 
-export const Cabecalho = styled.div`
-  background-color: #151515;
-  width:100%;
-  height:72px;
-  color:white;
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-export const Corpo = styled.div`
-  background-color: #333333;
-  height:100vh;
-  color:white;
-  display:flex;
+export const Left = styled.div`
+width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-`;
+  background-color:#151515;  
+  padding-left: 5%;
 
-export const Logo = styled.img`
-height:40px;
-margin-left: 28px;
-`;
+  h1{
+    font-family: 'Passion One', cursive;
+    font-size: 106px;
+    color:#FFFFFF;
+  }
+  h2{
+    font-family: 'Oswald', sans-serif;
+    color:#FFFFFF;
+    font-size: 43px;
+  } 
 
-export const Final = styled.div`
-display:flex;
-align-items: center;
-padding-right: 17px;
-`;
+`
 
-export const Icone = styled.div`
-background-color:white;
-width:10px;
-height:10px;
-`;
+export const Right = styled.div`
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+  background-color:#494c4e;
+  width: 535px;
+  height: 100vh;
 
-export const Foto = styled.img`
-width:53px;
-height:53px;
-margin-left: 16px;
-border-radius: 26.5px;
-background-color:white;
-`;
+`
 
-export const Conteudo = styled.div`
-font-size: 43px;
-font-weight: bold;
-color:#FFFFFF;
-padding-top:150px;
-`;
+export const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
 
-export const Postar = styled.div`
-width:611px;
-height:209px;
-background-color: #FFFFFF;
-border: rgba(0, 0, 0, 0.25);
-border-radius: 16px;
-display:flex;
-`;
-
-export const Publi = styled.div`
-display:flex;
-width:611px;
-background-color:#171717;
-height:auto;
-border-radius: 16px;
-margin-top: 30px;
-`;
-
-export const Esquerda = styled.div`
-height:100%;
-padding-left: 18px;
-padding-top: 16px;
-padding-right: 18px;
-`;
-
-export const Direita = styled.div`
-height:100%;
-width:100%;
-padding-top: 21px;
-`;
-
-export const FotoPerfil = styled.img`
-width:50px;
-height:50px;
-border-radius: 26.5px;
-background-color:greenyellow;
-`;
-
-export const Link = styled.input`
-font-size: 20px;
-line-height: 30px;
-color:#949494;
-border:hidden;
-border-radius: 5px;
-background-color: #EFEFEF;
-padding-left: 12px;
-margin-bottom: 5px;
-width:100%;
-
-::placeholder{
-color:#949494;
-font-size: 15px;
-line-height: 18px;
-}`;
-
-export const Titulo = styled.h1`
-font-size: 20px;
-color:#707070;
-line-height: 24px;
-`;
-
-export const Descricao = styled.input`
-font-size: 20px;
-line-height: 30px;
-color:#949494;
-border:hidden;
-border-radius: 5px;
-background-color: #EFEFEF;
-padding-left: 12px;
-height: 66px;
-margin-bottom: 5px;
-width: 100%;
-
-::placeholder{
-color:#949494;
-font-size: 15px;
-line-height: 18px;
-}
-`;
-
-export const Form = styled.form`
-display:flex;
-flex-direction: column;
-height: auto;
-padding-right: 22px;
-align-items: flex-end;
-margin-top: 10px;
-`;
-
-export const Botao = styled.button`
-width:112px;
-height:31px;
-background-color: #1877F2;
-border:hidden;
-border-radius: 5px;
-font-size: 14px;
-line-height: 16.8px;
-color:#FFFFFF;
-`;
-
-export const Nome = styled.div`
-color:#FFFFFF;
-font-size:19px;
-line-height:22.8px;
-`;
-
-export const Texto = styled.div`
-color:#B7B7B7;
-font-size:17px;
-line-height:20.4px;
-`;
-
-export const Site = styled.div`
-color:#B7B7B7;
-font-size:17px;
-line-height:20.4px;
-`;
-
-
+`
+export const StyledInput = styled.input`
+  width: 429px;
+  height: 65px;
+  padding: 10px;
+  border: 1px solid #D5D5D5;
+  border-radius: 6px;
+  font-size: 27px;
+  margin-bottom: 13px;
+  
+ 
+  &::placeholder{
+    color:#9F9F9F;
+    font-size: 27px;
+    font-family: 'Oswald', sans-serif;
+  }
+`
+export const StyledButton = styled.button`
+  font-family: 'Oswald', sans-serif;
+  width: 429px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+  background: #1877F2;
+  color: #FFFFFF;
+`
+export const StyledLink = styled(Link)`
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color:#FFFFFF;
+  margin-top: 14px;
+`

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const StyledAside = styled.aside`
   display: flex;
@@ -28,5 +28,11 @@ export const StyledAside = styled.aside`
     font-size: 19px;
     line-height: 23px;
     letter-spacing: 0.05em;
+    li {
+      width: fit-content;
+      :hover {
+        cursor: pointer;
+      }
+    }
   }
 `;
