@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import  Context  from "./contexts/Context"
 import HomePage from './pages/HomePage/HomePage';
 import SignUp from './pages/SignUpPage/SignUp';
-import Timeline from './pages/TimelinePage/Timeline';
+import Timeline from './pages/TimelinePage/Timeless';
 import Hashtag from './pages/HashtagPage/Hashtag';
 import User from './pages/UserPage/User'
 import { useState } from "react"

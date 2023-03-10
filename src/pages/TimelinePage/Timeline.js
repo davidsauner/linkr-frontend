@@ -1,7 +1,7 @@
 import { } from './style'
 import Delete from './Delete/Delete'
 import { useState } from 'react'
-export default function Timeline() {
+export default function Time() {
     const [showdelete , setShowDelete] = useState(false)
 
 

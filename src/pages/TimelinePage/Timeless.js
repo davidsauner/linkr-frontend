@@ -1,10 +1,9 @@
 import { Cabecalho, Corpo, Logo, Final, Foto, Conteudo, Postar, Publi, Direita, Esquerda, Link, Descricao, Titulo, FotoPerfil, Form, Botao, Nome, Texto, Site } from './style'
 import logo from '../../assets/linkrlogo.png'
-import IonIcon from '@reacticons/ionicons';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export default function HomePage() {
+export default function Timeline() {
     let imagemPerfil = '';
     const [link, setLink] = useState("")
     const [texto, setTexto] = useState("")
@@ -13,7 +12,7 @@ export default function HomePage() {
     const [textobotao,setBotao] = useState("Publish");
 
     useEffect(() => {
-        const posts = axios.get(`${process.env.REACT_APP_API_URL}`)
+        const posts = axios.get(`${process.env.REACT_APP_API_URL}/posts`)
         let array = [];
         posts.then(resposta => setPosts(resposta.data.reverse())
             )
@@ -24,7 +23,7 @@ export default function HomePage() {
             <Cabecalho>
                 <Logo src={logo} ></Logo>
                 <Final>
-                    <IonIcon name="chevron-down-outline" size="large" />
+                    <ion-icon name="chevron-down-outline" size="large" />
                     <Foto src={imagemPerfil} ></Foto>
                 </Final>
             </Cabecalho>
@@ -78,7 +77,7 @@ export default function HomePage() {
      
              console.log(dados);
      
-             const promise = axios.post(`${process.env.REACT_APP_API_URL}`, dados)
+             const promise = axios.post(`${process.env.REACT_APP_API_URL}/posts`, dados)
      
      
              promise.then(resposta => {
