@@ -12,7 +12,7 @@ export default function SignUp() {
 
     function cadastrar(e) {
         e.preventDefault()
-        if (!email || !username || !password || pictureurl) {
+        if (!email || !username || !password || !pictureurl) {
             alert('Todos os campos são obrigatórios!')
             setDisabled(false)
         }
