@@ -164,6 +164,9 @@ line-height:20.4px;
 `;
 
 export const Site = styled.div`
+color:#B7B7B7;
+font-size:17px;
+line-height:20.4px;
 `;
 
 
